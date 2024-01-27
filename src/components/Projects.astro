@@ -1,35 +1,70 @@
 ---
-import NextJS from "./icons/NextJS.astro"
-import Tailwind from "./icons/Tailwind.astro"
+import OpenAI from "./icons/OpenAI.astro";
+import Tailwind from "./icons/Tailwind.astro";
+import Aws from "./icons/Aws.astro";
 
 const TAGS = {
-  NEXT: {
-    name: "Next.js",
+  OPENAI: {
+    name: "Open AI",
     class: "bg-black text-white",
-    icon: NextJS,
+    icon: OpenAI,
   },
   TAILWIND: {
     name: "Tailwind CSS",
     class: "bg-[#003159] text-white",
     icon: Tailwind,
   },
-}
+  AWS: {
+    name: "AWS",
+    class: "bg-[#272F3D] text-white",
+    icon: Aws,
+  },
+};
 const PROJECTS = [
   {
-    title: "SVGL - A beautiful library with SVG logos",
+    title: "SynthText -  Resumen Automatizado con Inteligencia Artificial",
     description:
-      "Created from scratch with Next.js and Tailwind CSS. It's a library with SVG logos from the most popular brands. Optimized for SEO and performance.",
+      "Una herramienta avanzada que utiliza modelos de lenguaje para resumir textos extensos, proporcionando síntesis eficientes y precisas.",
     link: "https://svgl.vercel.app/",
     github: "https://github.com/pheralb/svgl",
-    image: "/projects/svgl.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+    image: "/projects/summarization.webp",
+    tags: [TAGS.OPENAI, TAGS.AWS],
   },
-]
+  {
+    title: "CelebriData: Rastreador de Eventos Históricos y Celebridades",
+    description:
+      "Un buscador innovador que vincula celebridades con eventos históricos en sus fechas de nacimiento, ofreciendo una experiencia interactiva y educativa.",
+    link: "https://svgl.vercel.app/",
+    github: "https://github.com/pheralb/svgl",
+    image: "/projects/celebrity_search.webp",
+    tags: [TAGS.OPENAI, TAGS.AWS],
+  },
+  {
+    title:
+      "ZirconVision - Análisis y Predicción Avanzada del Mercado de Zirconio",
+    description:
+      "Combina análisis de datos y una API para predecir precios del zirconio, brindando insights valiosos y soporte de decisiones en el mercado.",
+    link: "https://svgl.vercel.app/",
+    github: "https://github.com/pheralb/svgl",
+    image: "/projects/zyrcon.webp",
+    tags: [TAGS.OPENAI],
+  },
+  {
+    title:
+      "Armelco SAS - Plataforma Web para Gestión Documental en Construcción",
+    description:
+      "Solución interactiva para manejar eficientemente la documentación interna de la empresa constructora, optimizando el flujo de trabajo y la organización.",
+    link: "https://svgl.vercel.app/",
+    github: "https://github.com/pheralb/svgl",
+    image: "/projects/armelco.webp",
+    tags: [TAGS.TAILWIND],
+  },
+];
 ---
 
 {
   PROJECTS.map(({ image, title, description, tags }) => (
-    <article>
+    <article class="pb-14">
       <h3 class="text-2xl font-semibold text-yellow-800 dark:text-yellow-200 mb-2">
         {title}
       </h3>

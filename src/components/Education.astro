@@ -1,0 +1,30 @@
+---
+import EducationItem from "./EducationItem.astro";
+const EDUCATION = [
+    {
+        date: "Feb. 2021 - Actual",
+        title: "Doctorado en Ingeniería Electrónica y de Computación",
+        university: "Universidad de Antioquia",
+    },
+    {
+        date: "Ago. 2017 - Nov. 2019",
+        title: "Maestría en Ingeniería - Automatización Industrial",
+        university: "Universidad Nacional de Colombia",
+    },
+    {
+        date: "Feb. 2013 - Jun. 2017",
+        title: "Ingeniería Electrónica",
+        university: "Universidad Nacional de Colombia",
+    },
+];
+---
+
+<ol class="relative border-s border-gray-200 ml-3">
+    {
+        EDUCATION.map((education) => (
+            <li class="mb-10 ms-4">
+                <EducationItem {...education} />
+            </li>
+        ))
+    }
+</ol>

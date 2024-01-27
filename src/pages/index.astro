@@ -1,33 +1,35 @@
 ---
-import Layout from "../layouts/Layout.astro"
-import Badge from "../components/Badge.astro"
-import SectionContainer from "../components/SectionContainer.astro"
-import LinkedInIcon from "../components/icons/LinkedIn.astro"
-import SocialPill from "../components/SocialPill.astro"
-import GitHubIcon from "../components/icons/GitHub.astro"
-import MailIcon from "../components/icons/Mail.astro"
-import Experience from "../components/Experience.astro"
-import Briefcase from "../components/icons/Briefcase.astro"
-import CodeIcon from "../components/icons/Code.astro"
-import Projects from "../components/Projects.astro"
+import Layout from "../layouts/Layout.astro";
+import Badge from "../components/Badge.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import LinkedInIcon from "../components/icons/LinkedIn.astro";
+import SocialPill from "../components/SocialPill.astro";
+import GitHubIcon from "../components/icons/GitHub.astro";
+import MailIcon from "../components/icons/Mail.astro";
+import Experience from "../components/Experience.astro";
+import Education from "../components/Education.astro";
+import Briefcase from "../components/icons/Briefcase.astro";
+import CodeIcon from "../components/icons/Code.astro";
+import EducationIcon from "../components/icons/Education.astro";
+import Projects from "../components/Projects.astro";
 ---
 
 <Layout
-  title="Porfolio de midudev - Desarrollador y Programador Web con 15 años de experiencia"
-  description="Contrata a midudev para crear tu aplicación web o móvil. Desarrollador Web y Creador de Contenido. Especializado en crear aplicaciones únicas."
+  title="Porfolio de David Luna Naranjo - Cientifico de datos e ingeniero de Machine Learning Web con 6 años de experiencia"
+  description="Contrata a David Luna para optimizar tus procesos y crear nuevas inovaciones basados en tus datos."
 >
   <main class="px-4">
     <SectionContainer class="py-44 pb-32">
       <img
         class="rounded-full size-12 mb-4"
-        src="/midudev.webp"
-        alt="midudev photo"
+        src="/davidluna.webp"
+        alt="davidluna photo"
       />
       <h1
         class="text-gray-900 dark:text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10"
       >
-        Hey, soy midudev <a
-          href="https://linkedin.com/in/midudev"
+        Hola, soy David Luna <a
+          href="https://linkedin.com/in/davidlunafn"
           target="_blank"
           rel="noopener"
           class="flex justify-center items-center"
@@ -36,33 +38,33 @@ import Projects from "../components/Projects.astro"
         </a>
       </h1>
       <h2
-        class="text-xl lg:text-2xl text-balance max-w-[700px] text-black dark:text-white"
+        class="text-xl lg:text-2xl text-balance max-w-[800px] text-black dark:text-white"
       >
-        <span>+15 años de experiencia.</span><span
+        <span>+6 años de experiencia como</span><span
           class="text-yellow-800 dark:text-yellow-200"
         >
-          Desarrollador Web y Creador de Contenido</span
+          Data Scientist y Machine learning Enginner</span
         >
-         .<span class="text-red-800 dark:text-red-200">
-          De Barcelona, España</span
-        >.
-        <span class="text-sky-800 dark:text-sky-200"
-          >Especializado en crear aplicaciones únicas.</span
+         ,<span class="text-red-800 dark:text-red-200">
+          impulsando la investigación, el desarrollo de productos</span
+        >
+        <span class="text-sky-800 dark:text-sky-200">
+          y la optimización de procesos en diversas industrias.</span
         >
       </h2>
 
       <nav class="flex gap-4 mt-8 flex-wrap">
-        <SocialPill href="https://linkedin.com/in/midudev">
+        <SocialPill href="https://linkedin.com/in/davidlunafn">
           <LinkedInIcon class="size-4 md:size-6" />
            LinkedIn
         </SocialPill>
-        <SocialPill href="https://github.com/midudev">
+        <SocialPill href="https://github.com/davidluna-fn">
           <GitHubIcon class="size-4 md:size-6" />
            GitHub
         </SocialPill>
-        <SocialPill href="mailto:miduga@gmail.com">
+        <SocialPill href="mailto:davidluna.fn@gmail.com">
           <MailIcon class="size-4 md:size-6" />
-           miduga@gmail.com
+           davidluna.fn@gmail.com
         </SocialPill>
       </nav>
     </SectionContainer>
@@ -85,6 +87,16 @@ import Projects from "../components/Projects.astro"
          Proyectos
       </h2>
       <Projects />
+    </SectionContainer>
+
+    <SectionContainer id="education">
+      <h2
+        class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-black/80 dark:text-white/80"
+      >
+        <EducationIcon class="size-8" />
+         Educación
+      </h2>
+      <Education />
     </SectionContainer>
   </main>
 </Layout>
