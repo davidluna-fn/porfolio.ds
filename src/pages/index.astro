@@ -1,4 +1,6 @@
 ---
+
+import Hero from "@/components/Hero.astro"
 import Education from "../components/Education.astro";
 import EducationIcon from "../components/icons/Education.astro";
 import Layout from "@/layouts/Layout.astro";
@@ -21,95 +23,41 @@ import SocialPill from "@/components/SocialPill.astro";
   description="Contrata a David Luna para optimizar tus procesos y crear nuevas inovaciones basados en tus datos."
 >
   <main class="px-4">
-    <SectionContainer class="py-44 pb-32" id="contacto">
-      <img
-        class="rounded-full size-12 mb-4"
-        src="/davidluna.webp"
-        alt="davidluna photo"
-      />
-      <h1
-        class="text-gray-900 dark:text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10"
-      >
-        Hola, soy David Luna <a
-          href="https://linkedin.com/in/davidlunafn"
-          target="_blank"
-          rel="noopener"
-          class="flex justify-center items-center hover:scale-105 transition"
-        >
-          <Badge>Abierto a oportunidades</Badge>
-        </a>
-      </h1>
-      <h2
-        class="text-xl lg:text-2xl text-balance max-w-[800px] text-black dark:text-white"
-      >
-        <span>+6 años de experiencia como</span><span
-          class="text-yellow-800 dark:text-yellow-200"
-        >
-          Data Scientist y Machine learning Enginner</span
-        >
-        ,<span class="text-red-800 dark:text-red-200">
-          impulsando la investigación, el desarrollo de productos</span
-        >
-        <span class="text-sky-800 dark:text-sky-200">
-          y la optimización de procesos en diversas industrias.</span
-        >
-        Medellín, Colombia.
-      </h2>
-
-      <nav class="flex gap-4 mt-8 flex-wrap">
-        <SocialPill href="https://linkedin.com/in/davidlunafn">
-          <LinkedInIcon class="size-4 md:size-6" />
-          LinkedIn
-        </SocialPill>
-        <SocialPill href="https://github.com/davidlunafn">
-          <GitHubIcon class="size-4 md:size-6" />
-          GitHub
-        </SocialPill>
-        <SocialPill href="mailto:davidluna.fn@gmail.com">
-          <MailIcon class="size-4 md:size-6" />
-          davidluna.fn@gmail.com
-        </SocialPill>
-      </nav>
+    <SectionContainer class="py-16 md:py-36">
+      <Hero>
+      </slot>
+    </Hero>
     </SectionContainer>
+    <div class="space-y-24">
+    <SectionContainer id="experiencia">
+      <h2
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
+      >
+        <Briefcase class="size-8" />
+        Experiencia laboral
+      </h2>
+      <Experience />
+    </SectionContainer>
+
+    <SectionContainer id="proyectos">
+      <h2
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
+      >
+        <CodeIcon class="size-7" />
+        Proyectos
+      </h2>
+      <Projects />
+    </SectionContainer>
+
+    <SectionContainer id="sobre-mi">
+      <h2
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-black/80 dark:text-white"
+      >
+        <ProfileCheck class="size-8" />
+        Sobre mí
+      </h2>
+      <AboutMe />
+    </SectionContainer>
+  </div>
   </main>
-
-  <SectionContainer id="experiencia">
-    <h2
-      class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-black/80 dark:text-white/80"
-    >
-      <Briefcase class="size-7" />
-      Experiencia laboral
-    </h2>
-    <Experience />
-  </SectionContainer>
-
-  <SectionContainer id="proyectos">
-    <h2
-      class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-black/80 dark:text-white/80"
-    >
-      <CodeIcon class="size-7" />
-      Proyectos
-    </h2>
-    <Projects />
-  </SectionContainer>
-
-  <SectionContainer id="educacion">
-    <h2
-      class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-black/80 dark:text-white/80"
-    >
-      <EducationIcon class="size-8" />
-      Educación
-    </h2>
-    <Education />
-  </SectionContainer>
-
-  <SectionContainer id="sobre-mi">
-    <h2
-      class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-black/80 dark:text-white/80"
-    >
-      <ProfileCheck class="size-7" />
-      Sobre mi
-    </h2>
-    <AboutMe />
-  </SectionContainer>
 </Layout>
