@@ -1,11 +1,11 @@
 ---
-import GitHub from "./icons/GitHub.astro"
+import GitHub from "./icons/GitHub.astro";
 import OpenAI from "./icons/OpenAI.astro";
 import Tailwind from "./icons/Tailwind.astro";
 import Aws from "./icons/Aws.astro";
-import Link from "./icons/Link.astro"
+import Link from "./icons/Link.astro";
 
-import LinkButton from "./LinkButton.astro"
+import LinkButton from "./LinkButton.astro";
 
 const TAGS = {
   OPENAI: {
@@ -29,8 +29,8 @@ const PROJECTS = [
     title: "SynthText -  Resumen Automatizado con Inteligencia Artificial",
     description:
       "Una herramienta avanzada que utiliza modelos de lenguaje para resumir textos extensos, proporcionando síntesis eficientes y precisas.",
-    link: "https://svgl.vercel.app/",
-    github: "https://github.com/pheralb/svgl",
+    //link: "https://svgl.vercel.app/",
+    github: "https://github.com/davidlunafn/synthtext",
     image: "/projects/summarization.webp",
     tags: [TAGS.OPENAI, TAGS.AWS],
   },
@@ -38,8 +38,8 @@ const PROJECTS = [
     title: "CelebriData: Rastreador de Eventos Históricos y Celebridades",
     description:
       "Un buscador innovador que vincula celebridades con eventos históricos en sus fechas de nacimiento, ofreciendo una experiencia interactiva y educativa.",
-    link: "https://svgl.vercel.app/",
-    github: "https://github.com/pheralb/svgl",
+    //link: "https://svgl.vercel.app/",
+    github: "https://github.com/davidlunafn/celebridata",
     image: "/projects/celebrity_search.webp",
     tags: [TAGS.OPENAI, TAGS.AWS],
   },
@@ -48,8 +48,8 @@ const PROJECTS = [
       "ZirconVision - Análisis y Predicción Avanzada del Mercado de Zirconio",
     description:
       "Combina análisis de datos y una API para predecir precios del zirconio, brindando insights valiosos y soporte de decisiones en el mercado.",
-    link: "https://svgl.vercel.app/",
-    github: "https://github.com/pheralb/svgl",
+    //link: "https://svgl.vercel.app/",
+    github: "https://github.com/davidlunafn/zirconvision",
     image: "/projects/zyrcon.webp",
     tags: [TAGS.OPENAI],
   },
@@ -58,8 +58,8 @@ const PROJECTS = [
       "Armelco SAS - Plataforma Web para Gestión Documental en Construcción",
     description:
       "Solución interactiva para manejar eficientemente la documentación interna de la empresa constructora, optimizando el flujo de trabajo y la organización.",
-    link: "https://svgl.vercel.app/",
-    github: "https://github.com/pheralb/svgl",
+    link: "http://armelco.com/",
+    //github: "https://github.com/pheralb/svgl",
     image: "/projects/armelco.webp",
     tags: [TAGS.TAILWIND],
   },
@@ -69,53 +69,56 @@ const PROJECTS = [
 <div class="flex flex-col gap-y-16">
   {
     PROJECTS.map(({ image, title, description, tags, link, github }) => (
-    <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
-  <div class="w-full md:w-1/2">
-    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-      <img alt="Recién llegado vs 5 años en Nueva Zelanda" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
-    </div>
-  </div>
+      <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+        <div class="w-full md:w-1/2">
+          <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+            <img
+              alt="Recién llegado vs 5 años en Nueva Zelanda"
+              class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+              loading="lazy"
+              src={image}
+            />
+          </div>
+        </div>
 
-  <div class="w-full md:w-1/2 md:max-w-lg">
-    <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
-      {title}
-    </h3>
-    <div class="flex flex-wrap mt-2">
-      <ul class="flex flex-row mb-2 gap-x-2">
-          {tags.map((tag) => (
-            <li>
-              <span
-                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
-              >
-                <tag.icon class="size-4" />
-                {tag.name}
-              </span>
-            </li>
-          ))}
-        </ul>
+        <div class="w-full md:w-1/2 md:max-w-lg">
+          <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+            {title}
+          </h3>
+          <div class="flex flex-wrap mt-2">
+            <ul class="flex flex-row mb-2 gap-x-2">
+              {tags.map((tag) => (
+                <li>
+                  <span
+                    class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                  >
+                    <tag.icon class="size-4" />
+                    {tag.name}
+                  </span>
+                </li>
+              ))}
+            </ul>
 
-      <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
-      <footer class="flex items-end justify-start mt-4 gap-x-4">
-          {github && (
-            <LinkButton href={github}>
-              <GitHub class="size-6" />
-              Code
-              
-            </LinkButton>
-          )}
-          {link && (
-            <LinkButton href={link}>
-              <Link class="size-4" />
-              Preview
-            </LinkButton>
-          )}
-        </footer>
-    </div>
-  </div>
-</article>
+            <div class="mt-2 text-gray-700 dark:text-gray-400">
+              {description}
+            </div>
+            <footer class="flex items-end justify-start mt-4 gap-x-4">
+              {github && (
+                <LinkButton href={github}>
+                  <GitHub class="size-6" />
+                  Code
+                </LinkButton>
+              )}
+              {link && (
+                <LinkButton href={link}>
+                  <Link class="size-4" />
+                  Preview
+                </LinkButton>
+              )}
+            </footer>
+          </div>
+        </div>
+      </article>
     ))
   }
 </div>
-
-
-
